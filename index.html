@@ -6,11 +6,47 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="javascript" href="jquery-3.3.1.min.js" type="text/javascript" />
-  <script type="text/javascript">
+  <script rel="javascript" src="jquery-3.3.1.min.js" type="text/javascript" ></script>
+  <script>
     $(document).ready(function(){
-      $('fieldset').click(function(){dfdwffw
-        $(this).hide();
+      $('.block').click(function(){
+        var $neigh = $(this).parent().children();
+        var $ind = $(this).index();
+        var $firstInRow = 0;
+        var $wrWidth = $('.wrapper').first().width();
+        var $sum = 0;
+        $.each($neigh,function(i,elem){
+          $sum += $(elem).width() + 20;
+          if ($sum > $wrWidth) {
+            $sum = 0;
+            $firstInRow = i;
+          }
+          if (i == $ind) {
+            $sum = 0;
+            var $row = $neigh.splice($firstInRow,$neigh.length-$firstInRow);
+            $.each($row,function(j,rowelem){
+              $sum += $(rowelem).width() + 20;
+              if ($(rowelem).index() == $ind) {
+                if ($sum + 100 > $wrWidth) {
+                  $(this).animate({height : $(this).height()+100}, 200);
+                } else {
+                  $(this).animate({width : $(this).width()+100}, 200);
+                }
+                return false;
+              }
+            })
+
+          }
+
+
+
+        })
+        //alert($(this).index());
+        //$(this).animate({width : $(this).width()+100}, 200);
+      })
+      .mouseout(function(){
+        $(this).animate({width : 70}, 200);
+        $(this).animate({height : 70}, 200);
       })
     })
   </script>
@@ -19,57 +55,42 @@
 <body>
   <div class="wrapper">
     <div class="container">
-      <form class="cd-form floating-labels">
-        <fieldset>
-          <legend>Account Info</legend>
-          <div class="error-message">
-            <p>Please enter a valid email address</p>
-          </div>
-          <div class="icon">
-            <label class="cd-label" for="cd-name">Name</label>
-            <input class="user" type="text" name="cd-name" id="cd-name" required/>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Project Info</legend>
-          <div>
-            <h4>Budget</h4>
-            <p class="cd-select icon">
-              <select class="budget">
-                <option value="0">Select Budget</option>
-                <option value="1">&lt; $5000</option>
-                <option value="2">$5000 - $10000</option>
-                <option value="3">&gt; $10000</option>
-              </select>
-            </p>
-          </div>
-          <div>
-            <h4>Project type</h4>
-            <ul class="cd-form-list">
-              <li>
-                <input type="radio" name="radio-button" id="cd-radio-1" checked/>
-                <label for="cd-radio-1">Choice 1</label>
-              </li>
-              <li>
-                <input type="radio" name="radio-button" id="cd-radio-2"/>
-                <label for="cd-radio-2">Choice 2</label>
-              </li>
-              <li>
-                <input type="radio" name="radio-button" id="cd-radio-3"/>
-                <label for="cd-radio-3">Choice 3</label>
-              </li>
-            </ul>
-          </div>
-          <div class="icon">
-            <label class="cd-label" for="cd-textarea">Project description</label>
-            <textarea class="message" name="cd-textarea" id="cd-textarea" required></textarea>
-          </div>
+      <div class="block">
+        Кирпич #1
+      </div>
+      <div class="block">
+        Кирпич #2
+      </div>
+      <div class="block">
+        Кирпич #3
+      </div>
+      <div class="block">
+        Кирпич #4
+      </div>
+      <div class="block">
+        Кирпич #5
+      </div>
+      <div class="block">
+        Кирпич #6
+      </div>
+      <div class="block">
+        Кирпич #7
+      </div>
+      <div class="block">
+        Кирпич #8
+      </div>
+      <div class="block">
+        Кирпич #9
+      </div>
+      <div class="block">
+        Кирпич #10
+      </div>
+    </div>
+  </div>
 
-          <div>
-            <input type="submit" value="Send Message"/>
-          </div>
-        </fieldset>
-      </form>
+  <div class="wrapper">
+    <div class="block">
+
     </div>
   </div>
 </body>

@@ -26,17 +26,20 @@
   justify-content: center; */
 }
 .block{
-  display: block;
   cursor: pointer;
   margin: 10px;
   background-color: #AAFFFF;
   width: 70px;
   height: 70px;
   box-shadow: 3px 3px 8px #8aa;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  user-select: none;
 }
 .block:hover{
   background-color: #CCFFFF;
-  box-shadow: inset 3px 3px 8px #8aa;
+  box-shadow: inset 2px 2px 8px #9aa;
 }
 
 fieldset{
@@ -47,7 +50,7 @@ fieldset{
   border-color: #e6ebea;
   border-radius: 20px;
   background: linear-gradient(0, #fbffff, #f0f6f5);
-  
+
 }
 
 .cd-form .icon input, .cd-form .icon select, .cd-form .icon textarea {
