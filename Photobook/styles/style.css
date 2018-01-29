@@ -1,0 +1,102 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  width: 100%;
+  height: 80px;
+  color: white;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+}
+
+.header .menu_button{
+  position: absolute;
+  left: 110px;
+  background-image: url("../html-template/img/menu.png");
+  width: 25px;
+  height: 18px;
+  margin-top: 30px;
+  margin-bottom: 31px;
+  transition: 0.3s;
+}
+
+.header .menu_button:hover{
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.header .logo{
+  position: absolute;
+  background-image: url("../html-template/img/logo.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  left: 180px;
+  width: 180px;
+  height: 30px;
+  top: 25px;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: 0.2s;
+}
+
+.header .logo:hover{
+  transform: scale(1.1);
+}
+
+.header .phone{
+  position: absolute;
+  background-color: #ffd200;
+  right: 210px;
+  padding: 9px;
+  width: 160px;
+  height: 20px;
+  border-radius: 10px;
+  top: 24px;
+  text-align: center;
+}
+
+.header .phone a{
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  transition: 0.3s;
+}
+
+.header .phone a:hover{
+  color: tomato;
+  border-color: tomato;
+  text-shadow: 0 0 3px rgba(255,255,255,0.8);
+}
+
+.header .login_button{
+  position: absolute;
+  background-image: url("../html-template/img/login.png");
+  width: 33px;
+  height: 29px;
+  margin-top: 30px;
+  margin-bottom: 31px;
+  transition: 0.2s;
+  right: 110px;
+}
+
+.header .login_button:hover{
+  transform: scale(1.1);
+}
+
+.main_banner{
+  padding-top: 80px;
+  background-image: url("../html-template/img/Main banner.jpeg");
+  background-color: grey;
+  background-position: 50% 80px;
+  background-clip: content-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+  height: auto;
+  width: 100%;
+}
